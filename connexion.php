@@ -3,7 +3,7 @@ require_once 'includes/head.php';
 ?>
 
 <div class="container">
-    <h3>Veuillez saisir vos informations de connexion / Ceci est un test de type testuel</h3>
+    <h3>Veuillez saisir vos informations de connexion</h3>
     <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <div class="form-group">
             <label class="control-label col-sm-2" for="mail" >Identifiant :</label>
