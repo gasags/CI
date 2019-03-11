@@ -19,6 +19,12 @@
                 </div>
             </div>
             <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Mot de passe :</label>
+                <div class="inpConnexion">
+                    <input type="password" class="form-control" id="pwd" placeholder="Veuillez saisir votre mot de passe" name="tb_pwd" required>
+                </div>
+            </div>
+            <div class="form-group">
                 <div>
                     <button type="submit" class="btn btn-primary" name='btn_login'>Se connecter</button>
                 </div>
