@@ -1,6 +1,14 @@
 <html>
     <?php
     require_once 'includes/head.php';
+
+    if(isset($_GET["connexion"]))
+        {
+            if($_GET["connexion"] == "error")
+            {
+                require_once 'errorConnexion.html';
+            }
+        }
     ?>
 
     <div class="container formConnexion">
@@ -22,6 +30,7 @@
                 <div>
                     <button type="submit" class="btn btn-primary" name='btn_login'>Se connecter</button>
                 </div>
+                    <a href="creationUtilisateur.php"> Créer un compte </a>
             </div>
         </form>
     </div>

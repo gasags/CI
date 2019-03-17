@@ -14,7 +14,7 @@
         }
         ?>
         <div class="container formConnexion">
-            <h3>Veuillez saisir vos informations de connexion</h3>
+            <h3>Créer un compte</h3>
             <form class="form-horizontal" action="createUser.php" method="POST">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="login" >Identifiant :</label>

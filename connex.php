@@ -1,6 +1,6 @@
 <?php
+session_start();
 $isCo = false;
-print $isCo;
 try
 {
 	$dbh = new PDO ('mysql:host=localhost;dbname=music', 'root');
@@ -11,13 +11,14 @@ try
 			if($_POST["tb_mail"] == $user["uti_mail"] && $_POST["tb_pwd"] == $user["uti_mdp"])
 			{
 				$isCo = true;
-				header('Location:accueil.php');
+				$_SESSION['utilisateur'] = $user["uti_mail"];
+				header('Location:index.php');
 			}
 		}
 	}
 	if(!$isCo)
 	{
-		header('Location:connexion.php');
+		header('Location:connexion.php?connexion=error');
 	}
 }
 catch(PDOException $ex)
