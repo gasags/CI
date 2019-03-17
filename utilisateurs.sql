@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `uti_id` int(11) NOT NULL AUTO_INCREMENT,
+  `uti_login` varchar(20) NOT NULL,
   `uti_mdp` varchar(30) NOT NULL,
   `uti_mail` varchar(30) NOT NULL,
   `uti_dateInscription` date NOT NULL,
