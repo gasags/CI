@@ -15,6 +15,10 @@
             {
                 require_once 'errorPassword.html';
             }
+            else if($_GET["create"] == "errorMail")
+            {
+                require_once 'errorMail.html';
+            }
         }
         ?>
         <div class="container formConnexion">

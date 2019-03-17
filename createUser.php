@@ -9,23 +9,30 @@
 	{
 		if(validPassword($password, $password2))
 		{
-			try
+			if(validMail($mail))
 			{
-				$dbh = new PDO ('mysql:host=localhost;dbname=music', 'root');
-				$insert = $dbh->prepare('INSERT INTO utilisateurs (uti_login, uti_mdp, uti_mail, uti_dateInscription) 
-										 VALUES (:login, :pwd, :mail, :dateInscription)');
-				$insert->bindParam(':login', $login);
-				$insert->bindParam(':pwd', $password);
-				$insert->bindParam(':mail', $mail);
-				$insert->bindParam(':dateInscription', $dateInscription);
-				$insert->execute();
+				try
+				{
+					$dbh = new PDO ('mysql:host=localhost;dbname=music', 'root');
+
+					$insert = $dbh->prepare('INSERT INTO utilisateurs (uti_login, uti_mdp, uti_mail, uti_dateInscription) 
+											 VALUES (:login, :pwd, :mail, :dateInscription)');
+					$insert->bindParam(':login', $login);
+					$insert->bindParam(':pwd', $password);
+					$insert->bindParam(':mail', $mail);
+					$insert->bindParam(':dateInscription', $dateInscription);
+					$insert->execute();
+				}
+				catch(PDOException $ex)
+				{
+					print $ex->getmessage();
+				}
+				header('Location:index.php');
 			}
-			catch(PDOException $ex)
+			else
 			{
-				print $ex->getmessage();
+				header('Location:creationUtilisateur.php?create=errorMail');
 			}
-			
-			header('Location:index.php');
 		}
 		else
 		{
@@ -63,6 +70,20 @@
 		{
 			return false;
 		}
+	}
+
+	function validMail($mail)
+	{
+		$dbh = new PDO ('mysql:host=localhost;dbname=music', 'root');
+		
+		foreach($dbh->query('SELECT uti_mail FROM utilisateurs') as $user)
+		{
+			if($mail == $user["uti_mail"])
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 	
 ?>
