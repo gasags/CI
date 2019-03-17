@@ -15,9 +15,9 @@
         <h3>Veuillez saisir vos informations de connexion</h3>
         <form class="form-horizontal" action="connex.php" method="POST">
             <div class="form-group">
-                <label class="control-label col-sm-2" for="mail" >Identifiant :</label>
+                <label class="control-label col-sm-2" for="login" >Identifiant :</label>
                 <div class="inpConnexion">
-                    <input type="text" class="form-control" id="mail" placeholder="Veuillez saisir votre identifiant" name="tb_mail" required>
+                    <input type="text" class="form-control" id="login" placeholder="Veuillez saisir votre identifiant" name="login" required>
                 </div>
             </div>
             <div class="form-group">
