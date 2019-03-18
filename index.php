@@ -2,7 +2,8 @@
     <?php
     session_start();
     require_once 'includes/head.php';
-
+    require_once 'includes/navbar.php';
+    
     if(!isset($_SESSION['utilisateur']))
     {
     	header('Location:connexion.php');
@@ -31,7 +32,7 @@
                 	foreach(Cartistes::getArtistes() as $artiste)
                 	{
                 		echo '<tr>';
-	                		echo '<td><button type="submit" class="glyphicon glyphicon-search btn btn-info" name="btn_consulter"></button></td>';
+	                		echo '<td><a href="artiste.php?artiste=' . $artiste->nom . '" class="glyphicon glyphicon-search btn btn-info" name="btn_consulter"></button></td>';
 	                		echo '<td>' . $artiste->nom . '</td>';
 	                		echo '<td>' . $artiste->type . '</td>';
 	                		echo '<td>' . $artiste->pays . '</td>';
