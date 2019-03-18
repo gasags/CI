@@ -18,7 +18,6 @@ require_once 'Classes/Calbums.php';
         <thead>
             <tr>
                 <th>Nom</th>
-                <th>Artiste</th>
                 <th>Année</th>
                 <th>Prix</th>
             </tr>
@@ -29,7 +28,6 @@ require_once 'Classes/Calbums.php';
             {
                 echo '<tr>';
                 echo '<td>' . $album->nom . '</td>';
-                echo '<td>' . $album->artiste . '</td>';
                 echo '<td>' . $album->annee . '</td>';
                 echo '<td>' . $album->prix . '</td>';
                 echo '</tr>';
