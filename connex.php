@@ -1,19 +1,19 @@
 <?php
 session_start();
 $isCo = false;
+$login = $_POST["login"];
+$password = $_POST["tb_pwd"];
+
 try
 {
 	$dbh = new PDO ('mysql:host=localhost;dbname=music', 'root');
 	foreach($dbh->query('SELECT * FROM utilisateurs') as $user)
 	{
-		if(isset($_POST["tb_mail"]) && isset($_POST["tb_pwd"]))
+		if($login == $user["uti_login"] && $password == $user["uti_mdp"])
 		{
-			if($_POST["tb_mail"] == $user["uti_mail"] && $_POST["tb_pwd"] == $user["uti_mdp"])
-			{
-				$isCo = true;
-				$_SESSION['utilisateur'] = $user["uti_mail"];
-				header('Location:index.php');
-			}
+			$isCo = true;
+			$_SESSION['utilisateur'] = $user["uti_mail"];
+			header('Location:index.php');
 		}
 	}
 	if(!$isCo)

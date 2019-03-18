@@ -7,9 +7,17 @@
         <?php
         if(isset($_GET["create"]))
         {
-            if($_GET["create"] == "error")
+            if($_GET["create"] == "errorLogin")
             {
                 require_once 'errorCreateUser.html';
+            }
+            else if($_GET["create"] == "errorPwd")
+            {
+                require_once 'errorPassword.html';
+            }
+            else if($_GET["create"] == "errorMail")
+            {
+                require_once 'errorMail.html';
             }
         }
         ?>
@@ -32,6 +40,12 @@
                     <label class="control-label col-sm-2" for="pwd2">Mot de passe :</label>
                     <div class="inpConnexion">
                         <input type="password" class="form-control" id="pwd2" placeholder="Veuillez confirmer votre mot de passe" name="tb_pwd2" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="mail" >Mail :</label>
+                    <div class="inpConnexion">
+                        <input type="text" class="form-control" id="mail" placeholder="Veuillez saisir votre adresse mail" name="mail" required>
                     </div>
                 </div>
                 <div class="form-group">
