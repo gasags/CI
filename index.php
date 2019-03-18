@@ -1,12 +1,12 @@
 <html>
     <?php
-    session_start();
     require_once 'includes/head.php';
+    require_once 'includes/navbar.php';
 
-    if(!isset($_SESSION['utilisateur']))
+    /*if(!isset($_SESSION['utilisateur']))
     {
     	header('Location:connexion.php');
-    }
+    }*/
     ?>
 
     <body>

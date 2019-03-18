@@ -11,7 +11,7 @@ if(!isset($_SESSION['utilisateur']))
 
 <body>
 <div class="container">
-    <h2>Nom de l'artiste</h2>
+    <h2>Nom de l'album - Artiste</h2>
     <table class="table">
         <thead>
         <tr>
