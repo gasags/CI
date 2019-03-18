@@ -2,11 +2,7 @@
     <?php
     require_once 'includes/head.php';
     require_once 'includes/navbar.php';
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 3391f37c99e1762f933250182a06196bad43cbda
     if(!isset($_SESSION['utilisateur']))
     {
     	header('Location:connexion.php');
