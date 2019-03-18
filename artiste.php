@@ -1,6 +1,5 @@
 <html>
 <?php
-session_start();
 require_once 'includes/head.php';
 require_once 'includes/navbar.php';
 

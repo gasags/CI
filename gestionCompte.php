@@ -1,11 +1,11 @@
 <html>
     <?php
         require_once 'includes/head.php';
+        require_once 'includes/navbar.php';
     ?>
 
     <body>
         <?php
-            session_start();
 
             if(!isset($_SESSION['utilisateur']))
             {
